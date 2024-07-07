@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        #content {
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>Welcome to the Interactive Website</h1>
+        <button id="startBtn">Do you want to play a game?</button>
+        <div id="gameOptions" class="hidden">
+            <p>Select a game:</p>
+            <button onclick="startGame()">Start Game</button>
+        </div>
+        <div id="gameInProgress" class="hidden">
+            <p>Game in progress...</p>
+            <button onclick="endGame()">End Game</button>
+        </div>
+        <div id="gameResults" class="hidden">
+            <p>Game completed!</p>
+            <button onclick="exploreWebsite()">Explore Website</button>
+        </div>
+        <div id="websiteFeatures" class="hidden">
+            <p>Explore other features of the website...</p>
+            <button onclick="findEasterEgg()">Find Easter Egg</button>
+        </div>
+        <div id="easterEgg" class="hidden">
+            <p>Congratulations! You found the secret page!</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('startBtn').onclick = function() {
+            document.getElementById('startBtn').classList.add('hidden');
+            document.getElementById('gameOptions').classList.remove('hidden');
+        };
+
+        function startGame() {
+            document.getElementById('gameOptions').classList.add('hidden');
+            document.getElementById('gameInProgress').classList.remove('hidden');
+        }
+
+        function endGame() {
+            document.getElementById('gameInProgress').classList.add('hidden');
+            document.getElementById('gameResults').classList.remove('hidden');
+        }
+
+        function exploreWebsite() {
+            document.getElementById('gameResults').classList.add('hidden');
+            document.getElementById('websiteFeatures').classList.remove('hidden');
+        }
+
+        function findEasterEgg() {
+            document.getElementById('websiteFeatures').classList.add('hidden');
+            document.getElementById('easterEgg').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
